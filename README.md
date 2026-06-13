@@ -28,13 +28,21 @@ The core of the recommendation engine relies on **TF-IDF (Term Frequency-Inverse
 ## Project Structure
 
 - `preprocessing.ipynb`: The main Jupyter Notebook containing the entire pipeline—from loading and cleaning the data to running the recommendation algorithm.
-- `dataset/glints_final_dataset_fast.csv`: The scraped dataset containing job postings (needs to be present in the `dataset` folder relative to the notebook). **You can download the dataset from [Hugging Face](https://huggingface.co/datasets/alflax77/glints-job-scraping).**
+- `scrap_category.py`: Python script used to scrape the available job categories (saved to `job_category.json`).
+- `scrapper_glints.py`: Python script used to perform the main web scraping of job postings from Glints.
+- `job_category.json`: Contains the job categories scraped by `scrap_category.py`.
+- `merge_dataset.ipynb`: A helper notebook used to merge or combine multiple scraped dataset files.
+- `requirements.txt`: Contains the list of Python dependencies needed for the scraping and notebook environments.
+- `dataset/glints_dataset.csv`: The scraped dataset containing job postings (needs to be present in the `dataset` folder relative to the notebook). **You can download the dataset from [Hugging Face](https://huggingface.co/datasets/alflax77/glints-job-scraping).**
 
 ## How to Run
 
 1. **Prerequisites:** 
    - Ensure you have **Java** installed (the notebook configures `JAVA_HOME` to `/usr/lib/jvm/java-21-openjdk-amd64`, you may need to adjust this based on your local setup).
-   - Ensure you have `pyspark` and `jupyter` installed in your Python environment.
+   - Install the required Python dependencies using the `requirements.txt` file:
+     ```bash
+     pip install -r requirements.txt
+     ```
    - Install the **Jupyter** extension in Visual Studio Code.
    
 2. **Open the Notebook:** Open the `preprocessing.ipynb` file inside VS Code. Select your installed Python environment as the Jupyter Kernel (usually in the top right corner).

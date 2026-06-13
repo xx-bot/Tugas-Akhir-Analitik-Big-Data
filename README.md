@@ -28,7 +28,7 @@ The core of the recommendation engine relies on **TF-IDF (Term Frequency-Inverse
 ## Project Structure
 
 - `preprocessing.ipynb`: The main Jupyter Notebook containing the entire pipeline—from loading and cleaning the data to running the recommendation algorithm.
-- `dataset/glints_final_dataset_fast.csv`: The scraped dataset containing job postings (needs to be present in the `dataset` folder relative to the notebook).
+- `dataset/glints_final_dataset_fast.csv`: The scraped dataset containing job postings (needs to be present in the `dataset` folder relative to the notebook). **You can download the dataset from [Hugging Face](https://huggingface.co/datasets/alflax77/glints-job-scraping).**
 
 ## How to Run
 
